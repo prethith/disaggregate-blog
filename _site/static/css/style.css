@@ -13,6 +13,7 @@ body {
   font-family: "IBM Plex Serif", serif; /* Just for styling */
   min-height: 100vh; /* Ensure it covers the entire viewport */
   padding-top: 60px; /* Give space below the fixed navbar */
+  font-size: 1.4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,7 +94,6 @@ body {
 .sidebar {
   padding: 1rem;
   border-radius: 6px;
-  font-size: 0.95rem;
 }
 
 .sidebar > ul {
@@ -135,12 +135,12 @@ body {
 }
 
 .intro h1 {
-  font-size: 2rem;
+  /*font-size: 2rem;*/
   width:100%;
 }
 
 .intro p {
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   color: #333;
   width: 50%;
   padding: 1rem;
@@ -149,7 +149,7 @@ body {
 
 /* Blog Posts Section */
 .blog-posts h2 {
-  font-size: 1.5rem;
+
   margin-top: 1rem;
   color: #333;
 }
@@ -167,7 +167,6 @@ body {
   text-decoration: none;
   color: #111;
   font-weight: bold;
-  font-size: 1.1rem;
 }
 
 .blog-posts a:hover {
@@ -179,6 +178,12 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
+
+  body {
+    font-size: 1.2rem;
+    flex-direction: column;
+
+  }
   .site-main {
     grid-template-columns: 1fr;
   }
@@ -211,13 +216,6 @@ body {
     width: 100%;
     margin-top: 2rem;
     margin-left: 0;
-  }
-
-  .blog-posts h2 {
-    font-size: 1.2rem;
-  }
-  body {
-    flex-direction: column;
   }
 
   .sidebar {

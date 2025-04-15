@@ -10,11 +10,11 @@ h1{
 
 .post-content {
   padding: 20px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
   line-height: 1.3;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #111;
   text-align: justify;
 }
@@ -62,4 +62,8 @@ h1{
 }
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
+
+  .post-content {
+    font-size: 1.2rem;
+  }
  }

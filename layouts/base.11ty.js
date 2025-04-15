@@ -1,6 +1,7 @@
 export default function base(data) {
   const { title, content, page = {}, collections } = data;
-  const isHomePage = page.url === '/';
+  console.log("Page URL:", page.url);
+  const isHomePage = page.url === '/' || page.url === '/index/' || page.url === '/index.html';
   const mainContent = isHomePage ? `
     <div class="main-content">
       <h1>Tear it all apart. See what's inside.</h1>
@@ -15,6 +16,7 @@ export default function base(data) {
       ${content}
     </div>
   `;
+
   const sidebar = `
     <div class="sidebar">
       <h2>about</h2>
@@ -31,7 +33,8 @@ export default function base(data) {
         }
       </ul>
     </div>
-  `;
+`;
+
   return `
   <!DOCTYPE html>
   <html lang="en">

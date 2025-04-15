@@ -19,7 +19,7 @@ export default function base(data) {
     <div class="sidebar">
       <h2>about</h2>
       <p>a blog by prathith chivukula.</p>
-      <h2> links</h2>
+      <h2>links</h2>
       <a href="https://www.github.com/prethith">GitHub</a>
       <h2>categories</h2>
       <ul>

@@ -1,0 +1,18 @@
+.category-page ul {
+  list-style: none;
+}
+
+.category-page li {
+  padding: 15px;
+}
+
+.category-page a{
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.category-page a:hover {
+  color: #555;
+  text-decoration:underline;
+}

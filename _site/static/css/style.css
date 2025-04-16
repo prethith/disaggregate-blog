@@ -183,6 +183,12 @@ a:hover {
     width: 100%;
   }
 
+  .main-content .intro {
+    padding: 1rem;
+  }
+  .main-content .intro > h1 {
+    font-size: 1.2rem;
+  }
   .main-content .intro > p {
     font-size: 1.1rem;
   }

@@ -8,16 +8,10 @@
 body {
   background-image: radial-gradient(circle, #000 1px, transparent 1px); /* Stippling pattern */
   background-size: 10px 10px;  /* Controls the size of the dots */
-  margin: 0;
-  padding: 0;
   font-family: "IBM Plex Serif", serif; /* Just for styling */
   min-height: 100vh; /* Ensure it covers the entire viewport */
-  padding-top: 60px; /* Give space below the fixed navbar */
-  font-size: 1.4rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "IBM Plex Sans", sans-serif;
+  padding-top: 80px; /* Give space below the fixed navbar */
+  font-size: 1.3rem;
 }
 
 
@@ -25,12 +19,21 @@ a {
   color: #000;
   font-weight: bold;
   text-decoration: none;
+  background: linear-gradient(to top, yellow 40%, transparent 40%);
 }
 
 a:hover {
-  color: #555;
-  text-decoration: underline;
+  background: repeating-linear-gradient(
+    -45deg,
+    gold,
+    gold 2px,
+    yellow 2px,
+    yellow 4px
+  );
+  color: black;
+  text-decoration: none;
 }
+
 
 /* Site header */
 .site-header {
@@ -67,28 +70,64 @@ a:hover {
   margin: 0 auto;
 }
 
-body {
-  background-image: radial-gradient(circle, #000 1px, transparent 1px); 
-  background-size: 10px 10px;  
-  font-family: "IBM Plex Serif", serif; 
-  min-height: 100vh; 
-  padding-top: 80px; /* Give space below the fixed navbar */
-}
+
 .site-main {
   background-color: white;
   margin: 20px auto;
   padding: 20px;
   width: 95%;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  gap: 5rem;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+
+.main-content .intro {
+  background: repeating-linear-gradient(
+    45deg,
+    #fef9c3,
+    #fef9c3 10px,
+    #fff7b2 10px,
+    #fff7b2 20px
+  );
+  border: 3px dashed black;
+  padding: 2rem;
+  transform: rotate(-0.5deg);
+  box-shadow: 5px 5px 0 black;
+  font-family: "Special Gothic", "IBM Plex Serif", serif;
+  color: #111;
+}
+
+.main-content .intro > h1 {
+  font-family: "Special Gothic", "IBM Plex Serif", serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  box-shadow: 3px 3px 0 #facc15;
+  transform: rotate(-2deg);
+}
+
+.main-content .intro > p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  background: white;
+  padding: 1rem;
+  border-left: 5px solid black;
+  margin-top: 1rem;
+  font-family: "IBM Plex Serif", serif;
 }
 
 .sidebar {
@@ -105,51 +144,8 @@ body {
   font-family: "IBM Plex Serif", serif;
 }
 
-.sidebar a {
-  text-decoration: none;
-  padding-top: 5px;
-  font-weight: bold;
-  color: #000;
-}
-
-.sidebar a:hover {
-  color: #555;
-  text-decoration: underline;
-}
-
-
-/* Intro Section */
-.intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap:wrap;
-}
-
-.intro .sidebar {
-  width: 30%;
-  background-color: #fff;
-  padding: 1rem;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  margin-left: 2rem;
-}
-
-.intro h1 {
-  /*font-size: 2rem;*/
-  width:100%;
-}
-
-.intro p {
-  /*font-size: 1rem;*/
-  color: #333;
-  width: 50%;
-  padding: 1rem;
-}
-
-
 /* Blog Posts Section */
 .blog-posts h2 {
-
   margin-top: 1rem;
   color: #333;
 }
@@ -163,64 +159,42 @@ body {
   margin: 1rem 0;
 }
 
-.blog-posts a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-}
-
-.blog-posts a:hover {
-  color: #666;
-  text-decoration: underline;
-}
-
-
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
 
   body {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     flex-direction: column;
-
   }
   .site-main {
     grid-template-columns: 1fr;
-  }
-  .sidebar {
-    margin-top: 2rem;
+    gap: 0;
   }
 
   .banner_title {
     max-width: 80vw;      /* Decrease max width for small screens */
-
   }
 
+  .blog-posts {
+    padding: 0.5rem 0.5rem;
+  }
   .site-main {
-    width: 90%;
-  }
-
-  .intro {
-    flex-direction: column;
-  }
-
-  .intro > * {
     width: 100%;
   }
 
-  .intro p {
-    width: 100%;
+  .main-content .intro > p {
+    font-size: 1.1rem;
   }
-
-  .intro .sidebar {
-    width: 100%;
-    margin-top: 2rem;
-    margin-left: 0;
-  }
-
   .sidebar {
     width: 100%;
     position: static;
     box-shadow: none;
+    padding: 1rem 0.5rem;
+    margin: 0;
+  }
+
+  .blog-posts li {
+    font-size: 1.3rem;
   }
 }
